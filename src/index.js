@@ -15,3 +15,7 @@ ReactDOM.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+
+const node = document.getElementById('root');
+ReactDOM.render(<App />, node);
+// ReactDOM.render(<App />, document.getElementById('root'));

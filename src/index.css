@@ -1,13 +1,250 @@
-body {
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+
+* {
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  font-family: 'Poppins', sans-serif;
 }
+
+.container {
+  max-width: 500px;
+  margin: 30px auto;
+  overflow: auto;
+  min-height: 300px;
+  border: 1px solid steelblue;
+  padding: 30px;
+  border-radius: 5px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.btn {
+  display: inline-block;
+  background: #000;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 15px;
+  font-family: inherit;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+.task {
+  background: #f4f4f4;
+  margin: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.task.reminder {
+  border-left: 5px solid green;
+}
+
+.task h3 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.add-form {
+  margin-bottom: 40px;
+}
+
+.form-control {
+  margin: 20px 0;
+}
+
+.form-control label {
+  display: block;
+}
+
+.form-control input {
+  width: 100%;
+  height: 40px;
+  margin: 5px;
+  padding: 3px 7px;
+  font-size: 17px;
+}
+
+.form-control-check {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.form-control-check label {
+  flex: 1;
+}
+
+.form-control-check input {
+  flex: 2;
+  height: 20px;
+}
+
+footer {
+  margin-top: 30px;
+  text-align: center;
+} */
+
+/* :root {
+  box-sizing: border-box;
+}
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-family: Helvetica, 'Times New Roman', Times, serif;
+  background-color: #fff;
+}
+
+.container {
+  max-width: 75rem;
+  padding-top: .5em;
+  margin: 0 auto;
+}
+
+.container > * + * {
+  margin: 1.5em 0;
+}
+
+.nav-btn {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+}
+
+.nav-btn > li + li {
+  margin-left: 1.5em;
+}
+
+.nav-btn li a {
+  color: #FFFFFF;
+  display: block;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: .5em 1em;
+  border-radius: .2em;
+  transition: .2s all;
+}
+
+.nav-btn li a:link {
+  background-color: #000E1F;
+}
+
+.nav-btn li a:hover {
+  color: #000E1F;
+  background-color: #0077ff;
+}
+
+.post {
+  margin-top: 1.5em;
+}
+
+.btn {
+  margin-left: 1.5em;
+  padding: 1em 1.5em;
+}
+
+
+table {
+  font-size: 1em;
+  width: 100%;
+  margin: 2em 1em;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+tr {
+  height: 4em;
+  padding: 12em;
+}
+
+th, td {
+  padding-left: .5em;
+}
+
+th {
+  padding: .5em;
+  border-bottom: .15em solid #ddd;
+  font-weight: bold;
+}
+
+td {
+  border-bottom: .1em solid #ddd;
+}
+
+button {
+  font-size: 1em;
+  padding: .5em 1em;
+  border: none;
+  color: #fff;
+  background-color: #0366ee;
+  border: .1em solid rgb(164, 180, 196);
+  border-radius: .2em;
+  box-shadow: .1em .1em  10em solid #000;
+}
+
+form {
+  margin: 1em;
+  font-size: 1em;
+  margin: 2em 1em;
+}
+
+label {
+  display: block;
+  margin: .5em 1em;
+}
+
+form input:not([type=check]):not([type=radio]) {
+  font-size: 1em;
+  display: block;
+  width: 100%;
+  padding: .5em;
+  border: .1em solid #ddd;
+  border-radius: .3em;
+  margin: .5em 1em;
+}
+
+form input:not([type=check]):not([type=radio]):active,
+form input:not([type=check]):not([type=radio]):focus {
+  border-width: .2em;
+  border-style: solid;
+  border-color: #0366ee;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 1px inset,
+   rgb(140, 188, 254) 0px 0px 6px;
+}
+
+form button {
+  margin: .5em 1em;
+} */
