@@ -1,0 +1,23 @@
+.row {
+    padding: 0 10px;
+  }
+  
+  .row__container {
+    width: 90%;
+    padding: 20px 10px;
+    margin: 0 auto;
+  }
+  
+  .row__container--form {
+    padding: 10px;
+    background-color: var(--color-gray-light);
+    border-radius: 8px;
+  }
+  
+  .row__container--table {
+    min-height: 35vh;
+    padding: 10px;
+    background-color: var(--color-dark-light);
+    border-radius: 8px;
+  }
+  

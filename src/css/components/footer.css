@@ -1,0 +1,17 @@
+.footer {
+    text-align: center;
+  }
+  
+  .a-style {
+    font-size: 25px;
+    color: var(--color-dark);
+    background-color: var(--color-gray-light);
+    padding: 3px 10px;
+    border-radius: 100px;
+  }
+  
+  .signature {
+    margin-left: 8px;
+    color: var(--color-gray-light);
+  }
+  

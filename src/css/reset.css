@@ -1,0 +1,40 @@
+:root {
+    box-sizing: border-box;
+
+    /*************************** 
+     Variables
+    *********/
+    --color-dark: #16242F;
+    --color-dark-light: #1F3041;
+    --color-gray-light: #CAD1D7;
+    --color-white: #FFFFFF;
+    --color-black: #222;
+    --color-green-light: #2AF26C;
+}
+  
+*, 
+::before, 
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+  
+html {
+    font-family: sans-serif;
+    font-size: 16px;
+}
+  
+body, h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+}
+
+.container {
+    max-width: 1080px;
+    min-height: 80vh;
+    margin: 5% auto;
+    background-color: var(--color-dark);
+    border: none;
+    border-radius: 20px;
+    box-shadow: 100px 1px 10px 10px solid var(--color-black);
+}

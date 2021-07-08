@@ -1,291 +1,216 @@
-//////////////////////////////////////////
-////// DAY-ROLL APP
-/////////////////////////////////////////
+/////////////////////////////////////////////////////
+////////  Day Roll new one more modern //////////////
+/////////////////////////////////////////////////////
 import React, { Component } from 'react';
+import Form from './comps/Form';
+import Task from './comps/Tasks';
+import Logo from './assets/day-roll-logo.png';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = ({
+      data: []
+    });
+    
+    this.removeTask = this.removeTask.bind(this);
+  }
+
+  removeTask(key) {
+    const { data } = this.state;
+
+    this.setState({
+      data: data.filter((task, index) => {
+        return key !== index;
+      })
+    })
+  }
+
+  handleChange = (userData) => {
+    // const { data } = this.state;
+
+    // this.setState({
+    //   data: [...data, userData],
+    // })
+
+    this.setState(state => ({
+      data: [...state.data, userData]
+    }))
+  }
+
   render() {
     return (
       <div className="container">
+        <header>
+          <div className="row">
+            <div className="row__container">
+              <div className="heading-group">
+                <div className="logo-box">
+                  <img src={Logo} alt="Logo" />
+                </div>
+                <h1 className="heading">Write your day-roll</h1>
+              </div>
+            </div>
+          </div>
+        </header>
+        <main className="main">
+          <div className="row">
+            <div className="row__container">
+              <div className="row__container--form">
+                <Form handleChange={this.handleChange} />
+              </div>
+            </div>
+          </div>
+          <div className="row">
+            <div className="row__container">
+              <div className="row__container--table">
+                <div className="table table__title">
+                  <p>Roll</p>
+                  <p>Time</p>
+                </div>
+                <div className="table table__body">
+                  {/* <div className="table__data">
+                    <div className="table__data--info label">
+                      <p>Learning new JavaScript concept sdjfadfjad</p>
+                    </div>
+                    <div className="table__data--time">
+                      <p class="time">12:00</p>
+                      <button className="delete-btn">
+                        <img src={deleteBtn} alt="delete button" />
+                      </button>
+                    </div>
+                  </div>
 
+                  <div className="table__data">
+                    <div className="table__data--info label">
+                      <p>Learning new JavaScript concept</p>
+                    </div>
+                    <div className="table__data--time">
+                      <p class="time">12:00</p>
+                      <button className="delete-btn">
+                        <img src={deleteBtn} alt="delete button" />
+                      </button>
+                    </div>
+                  </div>
+
+                  <div className="table__data">
+                    <div className="table__data--info label">
+                      <p>Learning new JavaScript concept</p>
+                    </div>
+                    <div className="table__data--time">
+                      <p class="time">12:00</p>
+                      <button className="delete-btn">
+                        <img src={deleteBtn} alt="delete button" />
+                      </button>
+                    </div>
+                  </div>
+
+                  <div className="table__data">
+                    <div className="table__data--info label">
+                      <p>Learning new JavaScript concept</p>
+                    </div>
+                    <div className="table__data--time">
+                      <p class="time">12:00</p>
+                      <button className="delete-btn">
+                        <img src={deleteBtn} alt="delete button" />
+                      </button>
+                    </div>
+                  </div>
+
+                  <div className="table__data">
+                    <div className="table__data--info label">
+                      <p>Learning new JavaScript concept sdjfadfjad</p>
+                    </div>
+                    <div className="table__data--time">
+                      <p class="time">12:00</p>
+                      <button className="delete-btn">
+                        <img src={deleteBtn} alt="delete button" />
+                      </button>
+                    </div>
+                  </div>
+
+                  <div className="table__data">
+                    <div className="table__data--info label">
+                      <p>Learning new JavaScript concept</p>
+                    </div>
+                    <div className="table__data--time">
+                      <p class="time">12:00</p>
+                      <button className="delete-btn">
+                        <img src={deleteBtn} alt="delete button" />
+                      </button>
+                    </div>
+                  </div>
+
+                  <div className="table__data">
+                    <div className="table__data--info label">
+                      <p>Learning new JavaScript concept</p>
+                    </div>
+                    <div className="table__data--time">
+                      <p class="time">12:00</p>
+                      <button className="delete-btn">
+                        <img src={deleteBtn} alt="delete button" />
+                      </button>
+                    </div>
+                  </div>
+
+                  <div className="table__data">
+                    <div className="table__data--info label">
+                      <p>Learning new JavaScript concept sdjfadfjad</p>
+                    </div>
+                    <div className="table__data--time">
+                      <p class="time">12:00</p>
+                      <button className="delete-btn">
+                        <img src={deleteBtn} alt="delete button" />
+                      </button>
+                    </div>
+                  </div>
+
+                  <div className="table__data">
+                    <div className="table__data--info label">
+                      <p>Learning new JavaScript concept</p>
+                    </div>
+                    <div className="table__data--time">
+                      <p class="time">12:00</p>
+                      <button className="delete-btn">
+                        <img src={deleteBtn} alt="delete button" />
+                      </button>
+                    </div>
+                  </div>
+
+                  <div className="table__data">
+                    <div className="table__data--info label">
+                      <p>Learning new JavaScript concept</p>
+                    </div>
+                    <div className="table__data--time">
+                      <p class="time">12:00</p>
+                      <button className="delete-btn">
+                        <img src={deleteBtn} alt="delete button" />
+                      </button>
+                    </div>
+                  </div> */}
+
+                  <Task data={this.state.data} removeTask={this.removeTask} />
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+        <footer className="footer">
+          <div className="row">
+            <div className="row__container">
+              <div className="row__container--footer">
+                <p>
+                  <span className="a-style">A</span>
+                  <span className="signature">Design and Implemented by aggusniper</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </footer>
       </div>
     )
   }
 }
 
-export default App
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import React, { Component } from 'react';
-// import Table1 from './components/Table1';
-// import Form from './components/Form';
-
-// class App extends Component {
-//   state = {
-//     characters: [],
-//     characters: [
-//       {
-//         name: 'Charlie',
-//         job: 'Janitor',
-//       },
-//       {
-//         name: 'Mac',
-//         job: 'Bouncer',
-//       },
-//       {
-//         name: 'Dee',
-//         job: 'Aspring actress',
-//       },
-//       {
-//         name: 'Denis',
-//         job: 'Bartender',
-//       },
-//     ],
-//   }
-
-//   removeCharacter = (index) => {
-//     const {characters} = this.state
-
-//     this.setState({
-//       characters: characters.filter((character, i) => {
-//         return i !== index
-//       }),
-//     })
-//   }
-
-//   handleSubmit = (character) => {
-//     this.setState({characters: [...this.state.characters, character]})
-//   }
-
-//   render() {  
-//     // removeCharacter (props) {
-//     //   state = {props};
-//     //   this.state = this.state.characters.filter((character, i) => {
-//     //     return i !== index;
-//     //   });
-//     // }
-    
-//     const { characters } = this.state
-  
-
-//     return(
-//       <div className="container">
-//         <h1>React Tutorial</h1>
-//         <p>Add a character with a name and a job to the table.</p>
-//         <Table1 characterData={characters} removeCharacter={this.removeCharacter} />
-//         <h3>Add New</h3>
-//         <Form handleSubmit={this.handleSubmit} />
-//       </div>
-//     )
-//   }
-// }
-
-
-// export default App
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import Navigation from  './components/Navigation';
-// // import Header from './components/Header';
-// import Clock from './components/Clock';
-// import Toggle from './components/Toggle';
-// import LoggingButton from './components/Logginng';
-// import TestComponent from './components/TestComponent';
-// import StateAndLifecycle from './components/StateAndLifecycle';
-// import Table from './components/Table';
-// import TableHeader from './components/TableHeader';
-// import TableBody from './components/TableBody';
-// import Form from './components/Form';
-// import React, { Component } from 'react';
-// import PropTypes from 'prop-types'
-
-// class App extends Component {
-//   state = {
-//     characters: [
-//       {
-//         name: 'Charlie',
-//         job: 'Janitor',
-//       },
-//       {
-//         name: 'Mac',
-//         job: 'Bouncer',
-//       },
-//       {
-//         name: 'Dee',
-//         job: 'Aspring actress',
-//       },
-//       {
-//         name: 'Denis',
-//         job: 'Bartender',
-//       },
-//     ]
-//   }
-
-//   removeCharacter = (index) => {
-//     const {characters} = this.state
-
-//     this.setState({
-//       characters: characters.filter((character, i) => {
-//         return i !== index
-//       }),
-//     })
-//   }
-
-//   render() {
-//     // const name = this.props.name;
-//     // const onClick = (e) => {
-//     //   e.preventDefault();
-//     //   console.log('The component was clicked!');
-//     // };
-
-//     // const { characters } = this.state
-
-//     return (
-//       <div className="container">
-//         {/* <Navigation />
-//         <Navigation />
-//         <Navigation />
-//         <h1 style={data} onClick={onClick}>Hello, {name}</h1>
-
-//         <Clock />
-//         <Clock />
-
-//         <Toggle />
-
-//         <LoggingButton /> */}
-
-//         {/* <TestComponent name={ 'alex' } />
-//         <TestComponent name={ 'godson' } /> */}
-
-//         {/* <StateAndLifecycle /> */}
-
-//         {/* <Table /> */}
-
-//         {/* <table className="table">
-//           <TableHeader className="thead"/>
-//           <TableBody className="tbody"/>
-//         </table> */}
-
-//         {/* <Table characterData={this.state.characters} removeCharacter={this.removeCharacter} />
-//         <Form /> */}
-
-
-//       </div>
-//     )
-//   }
-// }
-
-// App.defaultProps = {
-//   name: 'Aggu Sniper'
-// }
-
-// App.propTypes = {
-//   name: PropTypes.string.isRequired
-// };
-
-// // Header.defaultProp = {
-// //   id: 1,
-// //   content: ' Is this your account',
-// //   user: 'aggu'
-// // }
-
-// // App.propTypes = {
-// //   id: PropTypes.number,
-// //   content: PropTypes.content,
-// //   user: PropTypes.user
-// // }
-
-// const data = {
-//   color: '#fff',
-//   backgroundColor: '#000',
-//   marginTop: '1.5em',
-//   padding: '.5em'
-// }
-
-
-// export default App
-
-
-
-// // import Header from './components/Header'
-
-// // function App() {
-// //   return (
-// //     <div className="container">
-// //       <Header />
-// //     </div>
-// //   );
-// // }
-
-
-// // export default App;
+export default App;
