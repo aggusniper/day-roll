@@ -30,11 +30,13 @@ class Form extends Component {
 
     submitForm = (event) => {
         event.preventDefault();
-        return this.props.handleChange(this.state);
         this.setState({
             roll: '',
             time: ''
         });
+        if (this.state.roll !== '' && this.state.time !== '') {
+            return this.props.handleChange(this.state);
+        }
     } 
 
     render() {
@@ -42,6 +44,7 @@ class Form extends Component {
 
         return (
             <form className="form">
+                <label htmlFor="roll">Roll</label>
                 <input 
                     id="roll"
                     type="text" 
@@ -50,15 +53,19 @@ class Form extends Component {
                     placeholder="e.g Write your roll"
                     className="input-roll"
                     onChange={this.handleRoll}
+                    required
+                    autofocus
                 />
+                <label htmlFor="time">Time</label>
                 <input 
                     id="time"
-                    type="text" 
+                    type="time" 
                     name="roll"
                     value={time}
                     placeholder="e.g Time"
                     className="input-time"
                     onChange={this.handleTime}
+                    required
                 />
                 <button type="submit" className="add-btn">
                     <img src={addBtn} alt="add button" onClick={this.submitForm} />

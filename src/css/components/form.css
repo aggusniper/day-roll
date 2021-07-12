@@ -1,6 +1,14 @@
 .form {
     width: 100%;  
   }
+
+  .form label {
+    display: none;
+  }
+
+  .form span {
+    display: none;
+  }
   
   .form input:not([type="radio"]):not([type="checkbox"]) {
     color: var(--color-black);
