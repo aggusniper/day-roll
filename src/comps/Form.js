@@ -70,8 +70,10 @@ class Form extends Component {
                     required
                 />
                 <button type="submit" className="add-btn">
-                    <img src={addBtn} alt="add button" onClick={this.submitForm} />
-                    <p>Add</p>
+                    <article>
+                        <img src={addBtn} alt="add button" onClick={this.submitForm} />
+                        <p>Add</p>
+                    </article>
                 </button>
             </form>
         )
