@@ -46,6 +46,7 @@ class Form extends Component {
             <form className="form">
                 <label htmlFor="roll">Roll</label>
                 <input 
+                    enterkeyhint="next"
                     id="roll"
                     type="text" 
                     name="roll"
@@ -58,6 +59,7 @@ class Form extends Component {
                 />
                 <label htmlFor="time">Time</label>
                 <input 
+                    enterkeyhint="done"
                     id="time"
                     type="time" 
                     name="roll"
