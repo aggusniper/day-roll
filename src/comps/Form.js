@@ -30,11 +30,12 @@ class Form extends Component {
 
     submitForm = (event) => {
         event.preventDefault();
-        this.setState({
-            roll: '',
-            time: ''
-        });
+        
         if (this.state.roll !== '' && this.state.time !== '') {
+            this.setState({
+                roll: '',
+                time: ''
+            });
             return this.props.handleChange(this.state);
         }
     } 
