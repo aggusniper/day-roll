@@ -31,6 +31,11 @@ class Form extends Component {
     submitForm = (event) => {
         event.preventDefault();
         
+        // create a user alert⚠️ to help the user know what happening
+        // if he / she doesn't fulfill all input fields
+
+        // 1: to check the input field
+
         if (this.state.roll !== '' && this.state.time !== '') {
             this.setState({
                 roll: '',
@@ -42,12 +47,12 @@ class Form extends Component {
 
     render() {
         const { roll, time } = this.state;
-
+        
         return (
             <form className="form">
                 <label htmlFor="roll">Roll</label>
                 <input 
-                    enterkeyhint="next"
+                    enterKeyHint="next"
                     id="roll"
                     type="text" 
                     name="roll"
@@ -56,11 +61,11 @@ class Form extends Component {
                     className="input-roll"
                     onChange={this.handleRoll}
                     required
-                    autofocus
+                    autoFocus
                 />
                 <label htmlFor="time">Time</label>
                 <input 
-                    enterkeyhint="done"
+                    enterKeyHint="done"
                     id="time"
                     type="time" 
                     name="roll"
