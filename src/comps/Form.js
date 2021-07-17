@@ -28,17 +28,31 @@ class Form extends Component {
         });
     }
 
+    // Try to make the Enter key work as well as stopping the page to auto reload
+    // handleEnterEvent = (event) => {
+    //     document.addEventListener('keyup', event => {
+    //         window.reload();
+    //         if (event.keyCode === 13) {
+    //             console.log('Enter key on ending process');
+    //         }
+    //     })
+    // }
+    
+
     submitForm = (event) => {
         event.preventDefault();
-        this.setState({
-            roll: '',
-            time: ''
-        });
+
         if (this.state.roll !== '' && this.state.time !== '') {
+            this.setState({
+                roll: '',
+                time: ''
+            });
+
             return this.props.handleChange(this.state);
         }
     } 
 
+    
     render() {
         const { roll, time } = this.state;
 
@@ -46,7 +60,7 @@ class Form extends Component {
             <form className="form">
                 <label htmlFor="roll">Roll</label>
                 <input 
-                    enterkeyhint="next"
+                    enterKeyHint="next"
                     id="roll"
                     type="text" 
                     name="roll"
@@ -55,25 +69,27 @@ class Form extends Component {
                     className="input-roll"
                     onChange={this.handleRoll}
                     required
-                    autofocus
+                    autoFocus
                 />
                 <label htmlFor="time">Time</label>
                 <input 
-                    enterkeyhint="done"
+                    enterKeyHint="done"
                     id="time"
                     type="time" 
                     name="roll"
                     value={time}
-                    placeholder="e.g Time"
+                    placeholder='hh:mm' 
                     className="input-time"
                     onChange={this.handleTime}
                     required
                 />
                 <button type="submit" className="add-btn">
-                    <article>
+                    <figure>
                         <img src={addBtn} alt="add button" onClick={this.submitForm} />
-                        <p>Add</p>
-                    </article>
+                        <figcaption>
+                            <p>Add</p>
+                        </figcaption>
+                    </figure>
                 </button>
             </form>
         )
