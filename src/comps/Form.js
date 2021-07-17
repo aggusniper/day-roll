@@ -28,24 +28,21 @@ class Form extends Component {
         });
     }
 
+    // Try to make the Enter key work as well as stopping the page to auto reload
+    // handleEnterEvent = (event) => {
+    //     document.addEventListener('keyup', event => {
+    //         window.reload();
+    //         if (event.keyCode === 13) {
+    //             console.log('Enter key on ending process');
+    //         }
+    //     })
+    // }
+    
+
     submitForm = (event) => {
         event.preventDefault();
-        
-        // create a user alert⚠️ to help the user know what happening
-        // if he / she doesn't fulfill all input fields
-
-        // 1: to check the input field
-
-        // also we want the enter key to work with the add button
-
-        // document.addEventListener('keypress', (e) => {
-        //     if(e.keyCode === 13 || e.which === 13) {
-        //         console.log('Enter key was pressed!');
-        //     }
-        // })
 
         if (this.state.roll !== '' && this.state.time !== '') {
-            console.log(this.state.time);
             this.setState({
                 roll: '',
                 time: ''
@@ -55,9 +52,10 @@ class Form extends Component {
         }
     } 
 
+    
     render() {
         const { roll, time } = this.state;
-        
+
         return (
             <form className="form">
                 <label htmlFor="roll">Roll</label>
@@ -84,11 +82,10 @@ class Form extends Component {
                     className="input-time"
                     onChange={this.handleTime}
                     required
-                    step="2"
                 />
                 <button type="submit" className="add-btn">
                     <article>
-                        <img src={addBtn} alt="add button" onKeyPress={this.add} onClick={this.submitForm} />
+                        <img src={addBtn} alt="add button" onClick={this.submitForm} />
                         <p>Add</p>
                     </article>
                 </button>
